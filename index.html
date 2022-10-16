@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+    
+<body>
+        
+
+    <h1>axios</h1>
+
+    <form onsubmit="showweather(); return false">
+        <input type="text" id="name" placeholder="location">
+        <button type="submit">show weather</button>
+    </form>
+
+    <script>
+
+        let showweather = () => {
+            let name = document.querySelector("#name").value;
+            console.log("pakistan");
+
+
+
+            //   
+            //  https://api.openweathermap.org/data/2.5/weather?units=metric&appid=9761fb31caf61a4e0c0761fabc569620q=karachi
+
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&appid=9761fb31caf61a4e0c0761fabc569620q=${name}`)
+                .then(function (response) {
+                    // handle success
+                    console.log("response is success");
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+
+
+                })}
+
+
+
+
+    </script>
+</body>
+
+</html>
